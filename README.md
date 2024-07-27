@@ -402,7 +402,7 @@ access rights, which can be done by installing udev rules as explained above.
 An alternative can be done by prefixing the call using `sudo`, e.g. `sudo
 build/ptouch-print --info`.
 Note: using udev rules is more secure as the binary file may be altered to
-erform malicious thing.
+perform malicious thing.
 
 
 ## Appendix

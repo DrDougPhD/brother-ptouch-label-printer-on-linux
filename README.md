@@ -46,7 +46,7 @@ printer.
   long PNG image, which helps save tape.
 
 * **ptouch-print** needs to build from source, which is
-  straightforward if basic compile tools are already installed.
+  straightforward if basic compilee tools are already installed.
 
 
 
@@ -106,7 +106,7 @@ Supported printers (some might have quirks)
 
 ## Examples
 
-### Query printer from information
+### Query printer for information
 
 ```sh
 $ ptouch-print --info

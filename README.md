@@ -119,19 +119,44 @@ text color = 08 (Black)
 error = 0000
 ```
 
-### Generate PNG image
+### Pre-generate PNG image
+
+```sh
+$ ptouch-print --text "John Doe" --writepng johndoe-name.png
+PT-D450 found on USB bus 1, device 8
+choosing font size=94
+
+$ file johndoe-name.png
+johndoe.png: PNG image data, 569 x 120, 1-bit colormap, non-interlaced
+```
+
+<img src="images/johndoe-name.png" style="border: 1px solid #666"/>
+
+
+```sh
+$ ptouch-print --text "John Doe" "+1 123-456-7890" --writepng johndoe-phone.png
+PT-D450 found on USB bus 1, device 8
+choosing font size=48
+
+$ file johndoe-phone.png 
+johndoe-phone.png: PNG image data, 561 x 120, 1-bit colormap, non-interlaced
+```
+
+<img src="images/johndoe-phone.png" style="border: 1px solid #666"/>
+
 
 ```sh
 $ ptouch-print --text "John Doe" "john.doe@example.org" "+1 123-456-7890" --writepng johndoe.png
 PT-D450 found on USB bus 1, device 11
-choosing font size=30
-$ ls -l johndoe.png 
--rw-r--r-- 1 root root 1591 Jun 10 11:55 johndoe.png
+choosing font size=32
+
 $ file johndoe.png 
-johndoe.png: PNG image data, 467 x 120, 1-bit colormap, non-interlaced
+johndoe-all.png: PNG image data, 493 x 120, 1-bit colormap, non-interlaced
 ```
 
 <img src="images/johndoe.png" style="border: 1px solid #666"/>
+
+
 
 Note that `ptouch-print` has to be able to communicate with the
 printer even if it is only generating a PNG file.

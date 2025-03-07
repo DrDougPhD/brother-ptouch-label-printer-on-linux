@@ -39,14 +39,14 @@ printer.
   of each print when using these printers. For the PT-D450, it's 23
   mm. This is because the (manual) cutter is this distance away from
   the print head. It's physically impossible to avoid this and has
-  nothing to which printer software you use. To save label tape, try
+  nothing to do which printer software you use. To save label tape, try
   to print multiple labels (images) per print.
   
 * **ptouch-print** can merge multiple monochrome PNG images into one
   long PNG image, which helps save tape.
 
 * **ptouch-print** needs to build from source, which is
-  straightforward if basic compilee tools are already installed.
+  straightforward if basic compile tools are already installed.
 
 
 
@@ -361,7 +361,7 @@ can be used without `sudo`.
 
 #### User installation
 
-If you do not want to installed `ptouch-print` system-wide, you can
+If you do not want to install `ptouch-print` system-wide, you can
 copy the executable and manual files as the current user in the
 desired destination:
 

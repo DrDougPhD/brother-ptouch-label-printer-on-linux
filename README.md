@@ -110,7 +110,13 @@ PT-D610BT found on USB bus 1, device 2
 choosing font size=60
 ```
 
-8. Happy printing!
+8. Review the help page
+
+```bash
+./build/ptouch-print --help
+```
+
+9. Happy printing!
 
 
 ### Troubleshooting
@@ -220,6 +226,16 @@ could not render text
 ```
 
 __Solution__: install a tape cassette in your printer.
+
+
+#### Problem 6:
+
+```
+$ ./ptouch-print --text "John Doe" "+1 123-456-7890" --writepng johndoe-phone.png
+ptouch-print: No arguments supported: Argument list too long
+```
+
+__Solution__: TBD.
 
 
 ## Gist

@@ -37,10 +37,54 @@ bash ./compile.sh
 4. Verify successful compilation
 
 ```bash
-cd build
-./ptouch-print --list-supported
+./build/ptouch-print --list-supported
 ```
 
+Expected:
+
+```
+Supported printers (some might have quirks)
+        PT-9200DX
+        PT-2300
+        PT-2420PC
+        PT-2450PC
+        PT-1950
+        PT-2700
+        PT-1230PC
+        PT-2430PC
+        PT-2730
+        PT-H500
+        PT-E500
+        PT-E550W
+        PT-P700
+        PT-P750W
+        PT-D410
+        PT-D450
+        PT-D460BT
+        PT-D600
+        PT-D610BT
+        PT-P710BT
+        PT-E310BT
+```
+
+5. Connect printer via USB, power it on, and verify successful detection
+
+```bash
+./build/ptouch-print --info
+```
+
+Expected (your printer model might be different):
+
+```
+PT-D610BT found on USB bus 1, device 8
+libusb_open error :LIBUSB_ERROR_ACCESS
+```
+
+6. System-wide installation
+
+```bash
+sudo make -C ./build install
+```
 
 *These instructions are a work in progress.*
 
@@ -114,6 +158,23 @@ __Solution__: install `libusb`
 sudo apt update
 sudo apt install --assume-yes libusb-1.0-0-dev
 ```
+
+#### Problem 4:
+
+```
+libusb_open error :LIBUSB_ERROR_ACCESS
+```
+
+__Solution__: Modify `udev` rules to grant your user USB access permissions
+
+```bash
+```
+
+__Bad Solution__: use `sudo`
+
+I discourage this solution as it grants the application root permissions to your system.
+At best, it's bad practice.
+At worst, `ptouch-print` might be malware and infect your computer.
 
 
 ## Gist

@@ -110,7 +110,7 @@ PT-D610BT found on USB bus 1, device 2
 choosing font size=60
 ```
 
-*These instructions are a work in progress.*
+8. Happy printing!
 
 
 ### Troubleshooting

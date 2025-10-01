@@ -235,7 +235,13 @@ $ ./ptouch-print --text "John Doe" "+1 123-456-7890" --writepng johndoe-phone.pn
 ptouch-print: No arguments supported: Argument list too long
 ```
 
-__Solution__: TBD.
+__Solution__: Read help page for up-to-date instructions
+
+```bash
+./build/ptouch-print --help
+```
+
+Your output may vary depending on differences in the software's version.
 
 
 ## Gist

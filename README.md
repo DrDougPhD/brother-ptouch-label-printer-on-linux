@@ -18,7 +18,7 @@ To quickly start on Ubuntu Linux 2024.04, follow the steps below.
 
 ```bash
 sudo apt update
-sudo apt install git build-essential cmake gettext
+sudo apt install --assume-yes git build-essential cmake gettext libgd-dev
 ```
 
 2. Clone `ptouch-print`
@@ -37,6 +37,53 @@ bash ./compile.sh
 4. TBD.
 
 These instructions are a work in progress.
+
+### Troubleshooting
+
+
+#### Problem 1:
+
+```bash
+CMake Error at /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
+  Could NOT find Gettext (missing: GETTEXT_MSGMERGE_EXECUTABLE
+  GETTEXT_MSGFMT_EXECUTABLE)    
+Call Stack (most recent call first)
+  /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake:600 (_FPHSA_FAILURE_MESSAGE)
+  /usr/share/cmake-3.28/Modules/FindGettext.cmake:81 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+  CMakeLists.txt:12 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+```
+
+__Solution__: install `gettext` - GNU Internationalization utilities 
+
+```
+sudo apt update
+sudo apt install --assume-yes gettext
+```
+
+
+#### Problem 2:
+
+```
+-- Found Gettext: /usr/bin/msgmerge (found version "0.21") 
+Found GD: NO
+CMake Error at cmake/FindGD.cmake:109 (MESSAGE):
+  Could not find GD library
+Call Stack (most recent call first):
+  CMakeLists.txt:13 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+```
+
+__Solution__: install `LibGD`
+
+```bash
+sudo apt update
+sudo apt install --assume-yes libgd-dev
+```
 
 
 ## Gist

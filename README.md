@@ -1,8 +1,7 @@
 # Use Brother P-touch Label Printer on Linux
 
-_NOTE: These are my notes on how to use the `ptouch-print` tool. I am
-**not** the author of `ptouch-print`
-(<https://git.familie-radermacher.ch/linux/ptouch-print.git>) /Henrik
+_NOTE: These are my notes on how to use the `ptouch-print` tool.
+I am **not** the author of [`ptouch-print`](<https://git.familie-radermacher.ch/linux/ptouch-print.git>) /Henrik
 2024-05-04_
 
 
@@ -10,6 +9,35 @@ These are my notes on how to use a Brother P-touch D450 ([PT-D450])
 from Linux, which is connected via USB.  They are written around the
 **[ptouch-print]** command-line tool for communicating with the label
 printer.
+
+## Quick Start
+
+To quickly start on Ubuntu Linux 2024.04, follow the steps below.
+
+1. Install compilation dependencies
+
+```bash
+sudo apt update
+sudo apt install git build-essential cmake gettext
+```
+
+2. Clone `ptouch-print`
+
+```bash
+git clone https://git.familie-radermacher.ch/linux/ptouch-print.git
+cd ptouch-print
+```
+
+3. Compile `ptouch-print`
+
+```bash
+bash ./compile.sh
+```
+
+4. TBD.
+
+These instructions are a work in progress.
+
 
 ## Gist
 

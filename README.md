@@ -97,10 +97,17 @@ text color = 00 (unknown)
 error = 0000
 ```
 
-7. System-wide installation
+7. Dry-run to create a test image *(this will not print)*
 
 ```bash
-sudo make -C ./build install
+./build/ptouch-print --text "John Doe" --writepng johndoe-name.png
+```
+
+Expected:
+
+```
+PT-D610BT found on USB bus 1, device 2
+choosing font size=60
 ```
 
 *These instructions are a work in progress.*
@@ -200,6 +207,19 @@ __Bad Solution__: use `sudo`
 I discourage this solution as it grants the application root permissions to your system.
 At best, it's bad practice.
 At worst, `ptouch-print` might be malware and infect your computer.
+
+
+#### Problem 5: `unknown tape width of 0mm`
+
+```
+$ ./build/ptouch-print --text "John Doe" --writepng johndoe-name.png
+PT-D610BT found on USB bus 1, device 2
+unknown tape width of 0mm, please report this.
+could not estimate needed font size
+could not render text
+```
+
+__Solution__: install a tape cassette in your printer.
 
 
 ## Gist

@@ -34,9 +34,16 @@ cd ptouch-print
 bash ./compile.sh
 ```
 
-4. TBD.
+4. Verify successful compilation
 
-These instructions are a work in progress.
+```bash
+cd build
+./ptouch-print --list-supported
+```
+
+
+*These instructions are a work in progress.*
+
 
 ### Troubleshooting
 

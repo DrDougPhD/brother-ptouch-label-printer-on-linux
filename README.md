@@ -67,7 +67,17 @@ Supported printers (some might have quirks)
         PT-E310BT
 ```
 
-5. Connect printer via USB, power it on, and verify successful detection
+5. Grant your user with sufficient `udev` permissions and **reboot**
+
+```bash
+sudo cp udev/20-usb-ptouch-permissions.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules
+```
+
+After this, save any work and reboot your system.
+
+
+6. Connect printer via USB, power it on, and verify successful detection
 
 ```bash
 ./build/ptouch-print --info
@@ -76,11 +86,18 @@ Supported printers (some might have quirks)
 Expected (your printer model might be different):
 
 ```
-PT-D610BT found on USB bus 1, device 8
-libusb_open error :LIBUSB_ERROR_ACCESS
+PT-D610BT found on USB bus 1, device 2
+unknown tape width of 0mm, please report this.
+maximum printing width for this printer is 128px
+maximum printing width for this tape is 0px
+media type = 00 (No media)
+media width = 0 mm
+tape color = 00 (unknown)
+text color = 00 (unknown)
+error = 0000
 ```
 
-6. System-wide installation
+7. System-wide installation
 
 ```bash
 sudo make -C ./build install
@@ -165,9 +182,17 @@ sudo apt install --assume-yes libusb-1.0-0-dev
 libusb_open error :LIBUSB_ERROR_ACCESS
 ```
 
-__Solution__: Modify `udev` rules to grant your user USB access permissions
+__Solution__: Modify `udev` rules to grant your user USB access permissions and **reboot**
 
 ```bash
+sudo cp udev/20-usb-ptouch-permissions.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules
+```
+
+Reboot your system after this.
+
+```bash
+sudo reboot
 ```
 
 __Bad Solution__: use `sudo`

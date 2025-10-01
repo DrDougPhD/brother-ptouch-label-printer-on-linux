@@ -85,6 +85,29 @@ sudo apt update
 sudo apt install --assume-yes libgd-dev
 ```
 
+#### Problem 3:
+
+```
+CMake Error at /usr/share/cmake-3.28/Modules/FindPkgConfig.cmake:619 (message):
+  The following required packages were not found:
+
+   - libusb-1.0
+
+Call Stack (most recent call first):
+  /usr/share/cmake-3.28/Modules/FindPkgConfig.cmake:841 (_pkg_check_modules_internal)
+  CMakeLists.txt:18 (pkg_check_modules)
+
+
+-- Configuring incomplete, errors occurred!
+```
+
+__Solution__: install `libusb`
+
+```bash
+sudo apt update
+sudo apt install --assume-yes libusb-1.0-0-dev
+```
+
 
 ## Gist
 
